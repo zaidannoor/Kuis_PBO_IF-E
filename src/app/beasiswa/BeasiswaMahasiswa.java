@@ -12,7 +12,7 @@ package app.beasiswa;
 public interface BeasiswaMahasiswa {
     float skj = 0;
     float rd = 0;
-    float kds = 0;
-    public int seleksiMahasiswa(float skj, float rd, float kds);
+    float kps = 0;
+    public int seleksiMahasiswa(float skj, float rd, float kps);
     
 }

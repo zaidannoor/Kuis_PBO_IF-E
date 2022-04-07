@@ -30,8 +30,8 @@ public class Pengguna implements BeasiswaMahasiswa, BeasiswaPelajar {
     }
     
     @Override
-    public int seleksiMahasiswa(float skj, float rd, float kds) {
-        float total_nilai = (skj*0.6f) + (rd*0.25f) + (kds*0.15f);
+    public int seleksiMahasiswa(float skj, float rd, float kps) {
+        float total_nilai = (skj*0.6f) + (rd*0.25f) + (kps*0.15f);
         
         if (total_nilai > 87.4) {
             return 1;
@@ -55,7 +55,7 @@ public class Pengguna implements BeasiswaMahasiswa, BeasiswaPelajar {
     
     public void hasilAkhirPelajar(float ske, float tk,float kdt){
         if(seleksiUsia() > 0){
-            if (seleksiMahasiswa(ske,tk,kdt) > 0) {
+            if (seleksiPelajar(ske,tk,kdt) > 0) {
                 System.out.println("Selamat "+ nama + " (" + usia + " )tahun" + " anda dinyatakan lolos diterima seleksi beasiswa "
                     + "program pelajar");
                 System.out.println("karena berhasil mencapai nilai yang diharapkan pada tahap seleksi");
@@ -72,6 +72,30 @@ public class Pengguna implements BeasiswaMahasiswa, BeasiswaPelajar {
         else{
             System.out.println("Mohon maaf "+ nama + " (" + usia + ")tahun" + " anda dinyatakan tidak"
                     + " diterima dalam beasiswa program pelajar");
+            System.out.println("karena usia anda tidak memenuhi prasyarat penerima beasiswa");
+                    
+        }
+    }
+    
+    public void hasilAkhirMahasiswa(float skj, float rd, float kps){
+        if(seleksiUsia() > 0){
+            if (seleksiMahasiswa(skj,rd,kps) > 0) {
+                System.out.println("Selamat "+ nama + " (" + usia + " )tahun" + " anda dinyatakan lolos diterima seleksi beasiswa "
+                    + "program mahasiswa");
+                System.out.println("karena berhasil mencapai nilai yang diharapkan pada tahap seleksi");
+                        
+            }
+            else{
+                System.out.println("Mohon maaf "+ nama + " (" + usia + ")tahun" + " anda dinyatakan tidak"
+                    + " diterima dalam beasiswa program mahasiswa");
+                System.out.println("karena belum mencapai nilai yang diharapkan saat seleksi");
+                       
+            }
+        }
+        
+        else{
+            System.out.println("Mohon maaf "+ nama + " (" + usia + ")tahun" + " anda dinyatakan tidak"
+                    + " diterima dalam beasiswa program mahasiswa");
             System.out.println("karena usia anda tidak memenuhi prasyarat penerima beasiswa");
                     
         }
