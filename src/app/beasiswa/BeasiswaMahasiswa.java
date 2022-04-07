@@ -13,6 +13,6 @@ public interface BeasiswaMahasiswa {
     float skj = 0;
     float rd = 0;
     float kds = 0;
-    public int seleksi(float skj, float rd, float kds);
+    public int seleksiMahasiswa(float skj, float rd, float kds);
     
 }

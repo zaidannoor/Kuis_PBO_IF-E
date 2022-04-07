@@ -13,7 +13,7 @@ public interface BeasiswaPelajar {
     float ske = 0;
     float tk = 0;
     float kdt = 0;
-    public int seleksi(float ske,float tk,float kdt);
+    public int seleksiPelajar(float ske,float tk,float kdt);
     
     
 }
